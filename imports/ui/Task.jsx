@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import classnames from 'classnames';
 
 import { Tasks } from '../api/tasks.js';
+import { Button } from 'react-bootstrap';
  
 // Task component - represents a single todo item
 export default class Task extends Component {
@@ -26,7 +28,7 @@ export default class Task extends Component {
       checked: this.props.task.checked,
       private: this.props.task.private,
     });
- 
+
     return (
       <li className={taskClassName}>
         <button className="delete" onClick={this.deleteThisTask.bind(this)}>
@@ -53,3 +55,4 @@ export default class Task extends Component {
     );
   }
 }
+
