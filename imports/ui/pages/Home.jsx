@@ -4,16 +4,24 @@ import PropTypes from 'prop-types';
 import { Grid, Row, Col, PageHeader, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
+const styles = {
+  buttons: {
+    height: '100px',
+    marginBottom: '26px',
+    lineHeight: '79px',
+  }
+}
+
 class Home extends Component {
   render() {
     return (
-      <Grid>
+      <Grid fluid={true}>
         <Row className="show-grid">
-          <Col xs={8} xsOffset={2}>
+          <Col xs={10} xsOffset={1}>
             <PageHeader>Veldu farartæki</PageHeader>  
             <LinkContainer to={{ pathname: '/stacker' }}>
               <Button
-                style={{ height: '100px', margin: '1rem', lineHeight: '79px' }} 
+                style={styles.buttons}
                 bsStyle="info"
                 bsSize="lg"
                 block
@@ -23,8 +31,8 @@ class Home extends Component {
             </LinkContainer>
 
             <LinkContainer to={{ pathname: '/sisu' }}>
-              <Button 
-                style={{ height: '100px', margin: '1rem', lineHeight: '79px' }} 
+              <Button
+                style={styles.buttons}
                 bsStyle="success" 
                 bsSize="lg" 
                 block
