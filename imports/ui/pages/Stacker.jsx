@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import { Table, Grid, Row, Col, PageHeader, Button } from 'react-bootstrap';
-import DispatchTable from './Stacker/DispatchTable/DispatchTable.jsx';
-import SisuStatusTable from './Stacker/SisuStatusTable.jsx';
+import DispatchContainers from '../components/DispatchContainers/DispatchContainers.jsx'
+import SisuStatusTable from '../components/SisuStatusTable.jsx';
 
 class Stacker extends Component {
   render() {
@@ -15,7 +15,7 @@ class Stacker extends Component {
         </Row>
 
         <Row className="show-grid">
-          <DispatchTable />
+          <DispatchContainers />
         </Row>
 
         <Row className="show-grid">

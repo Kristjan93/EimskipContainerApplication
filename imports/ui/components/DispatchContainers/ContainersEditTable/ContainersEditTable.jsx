@@ -1,9 +1,9 @@
 import React from 'react';
 import TableRow from './TableRow.jsx';
 
-import { 
+import {
   Col,
-  Table as _Table,
+  Table,
   Glyphicon, 
   ButtonToolbar, 
   Button,
@@ -14,9 +14,9 @@ import {
   ControlLabel,
 } from 'react-bootstrap';
 
-const Table = ({ containers, onContainerEdit }) => {
+const ContainersTable = ({ containers, onContainerEdit }) => {
   return (
-    <_Table style={{ fontSize: '2rem', }} striped bordered hover>
+    <Table style={{ fontSize: '2rem', }} striped bordered hover>
       <thead>
         <tr>
           <th>Staðsetning</th>
@@ -32,8 +32,8 @@ const Table = ({ containers, onContainerEdit }) => {
           key={index} container={item} />
         ))}
       </tbody>
-    </_Table>
+    </Table>
   );
 };
 
-export default Table;
+export default ContainersTable;

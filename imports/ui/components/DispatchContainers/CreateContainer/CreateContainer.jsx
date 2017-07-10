@@ -11,7 +11,7 @@ import {
   ControlLabel,
 } from 'react-bootstrap';
 
-class NewContainer extends Component {
+class CreateContainer extends Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -71,4 +71,4 @@ class NewContainer extends Component {
   }
 };
 
-export default NewContainer;
+export default CreateContainer;
