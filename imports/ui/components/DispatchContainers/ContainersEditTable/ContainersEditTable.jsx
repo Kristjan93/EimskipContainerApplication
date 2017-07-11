@@ -27,9 +27,11 @@ const ContainersTable = ({ containers, onContainerEdit }) => {
       </thead>
       <tbody>
         {containers.map((item, index) => (
-          <TableRow 
-          onContainerEdit={onContainerEdit}
-          key={index} container={item} />
+          <TableRow
+            key={index}
+            container={item}
+            onContainerEdit={onContainerEdit}
+          />
         ))}
       </tbody>
     </Table>

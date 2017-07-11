@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Meteor } from 'meteor/meteor';
 
 import { 
   Glyphicon, 
@@ -32,15 +33,20 @@ class CreateContainer extends Component {
     });
   }
 
-  onSubmit (event) {
+  onSubmit(event) {
     event.preventDefault();
 
-    const newItem = { 
-      id: 3, 
-      location: this.state.location, 
+    const newContainer = Object.assign({}, {
+      location: this.state.location,
       number: this.state.number
-    }
-    this.props.onSubmit(newItem);
+    });
+
+    Meteor.call('containers.insert', newContainer);
+
+    this.setState({
+      location: '',
+      number: ''
+    });
   }
 
   render() {

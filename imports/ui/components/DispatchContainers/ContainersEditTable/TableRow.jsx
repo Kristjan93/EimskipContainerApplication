@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Meteor } from 'meteor/meteor';
 
 import { 
   Col,
@@ -21,7 +22,6 @@ class TableRow extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     
-
     this.state = {
       editMode: false,
       location: this.props.container.location,
@@ -43,7 +43,8 @@ class TableRow extends Component {
   }
 
   handleDelete() {
-    console.log(this.props.container.id);
+    console.log(this.props.container._id)
+    Meteor.call('containers.remove', this.props.container._id);
   }
 
   handleSubmit() {

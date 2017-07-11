@@ -1,35 +1,19 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
  
-import { Containers } from '../../../api/containers.js';
+import { Col } from 'react-bootstrap';
 
 import CreateContainer from './CreateContainer/CreateContainer.jsx';
 import ContainersEditTable from './ContainersEditTable/ContainersEditTable.jsx';
 
-import { Col } from 'react-bootstrap';
-
-const containers = [
-  {
-    id: 1,
-    location: '03L-14-3B',
-    number: '1234',
-    dispatched: false,
-    order: null,
-  },
-  {
-    id: 2,
-    location: '08O-17-1A',
-    number: '1234',
-    dispatched: false,
-    order: null,
-  },
-];
+import { Containers } from '../../../api/containers.js';
 
 class DispatchContainers extends Component { 
   constructor(props) {
     super(props);
     this.state = {
-      containers: containers,
+      containers: null,
     }
 
     this.handleNewContainer = this.handleNewContainer.bind(this);
@@ -66,20 +50,12 @@ class DispatchContainers extends Component {
   render() {
     return (
       <Col xs={12}>
-        {/* <CreateContainer onSubmit={this.handleNewContainer} /> */}
+        <CreateContainer onSubmit={this.handleNewContainer} />
         
-        {this.props.containers.map((item) => {
-          return (
-            <div key={item._id}>
-              {item.text}
-            </div>
-          );
-        })}
-
-        {/* <ContainersEditTable 
+        <ContainersEditTable 
           onContainerEdit={this.handleCommentEdit} 
-          containers={ this.state.containers } 
-        /> */}
+          containers={this.props.containers}
+        />
       </Col>
     );
   }
@@ -89,6 +65,6 @@ export default createContainer(() => {
   Meteor.subscribe('containers');
   
   return {
-    containers: Containers.find({}).fetch(),
+    containers: Containers.find({ }).fetch(),
   };
 }, DispatchContainers);
