@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { Grid, Row, Col, PageHeader, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -46,9 +45,5 @@ class Home extends Component {
     );
   }
 }
-
-Home.propTypes = {
-
-};
 
 export default Home;

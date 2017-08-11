@@ -1,18 +1,8 @@
 import React from 'react';
-import TableRow from './TableRow.jsx';
 
-import {
-  Col,
-  Table,
-  Glyphicon, 
-  ButtonToolbar, 
-  Button,
-  Well,
-  Form,
-  FormGroup,
-  FormControl,
-  ControlLabel,
-} from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
+
+import TableRow from './TableRow/TableRow.jsx';
 
 const ContainersTable = ({ containers, onContainerEdit }) => {
   return (

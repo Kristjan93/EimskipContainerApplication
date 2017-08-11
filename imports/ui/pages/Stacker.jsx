@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Table, Grid, Row, Col, PageHeader, Button } from 'react-bootstrap';
+import { Table, Grid, Row, Col, PageHeader } from 'react-bootstrap';
 import DispatchContainers from '../components/DispatchContainers/DispatchContainers.jsx'
 import SisuStatusTable from '../components/SisuStatusTable.jsx';
 

@@ -16,7 +16,6 @@ class DispatchContainers extends Component {
       containers: null,
     }
 
-    this.handleNewContainer = this.handleNewContainer.bind(this);
     this.handleCommentEdit = this.handleCommentEdit.bind(this);
   }
 
@@ -39,10 +38,6 @@ class DispatchContainers extends Component {
     this.setState({containers: updatedContainers});
   }
 
-  handleNewContainer(item) {
-    this.setState({ containers: this.state.containers.concat([item]) });
-  }
-
   handleContainerEdit(item) {
     this.setState({ containers: this.state.containers.concat([item]) });
   }
@@ -50,7 +45,7 @@ class DispatchContainers extends Component {
   render() {
     return (
       <Col xs={12}>
-        <CreateContainer onSubmit={this.handleNewContainer} />
+        <CreateContainer />
         
         <ContainersEditTable 
           onContainerEdit={this.handleCommentEdit} 
